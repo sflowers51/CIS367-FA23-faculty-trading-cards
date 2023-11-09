@@ -9,8 +9,22 @@ const data = ["zero","one", "two", "three", "four", "five", "six", "seven", "eig
 const carousel = document.getElementsByClassName("carousel")[0];
 // var activeIndex = Math.floor(data.length/2);
 
-const searchParams = new URLSearchParams(window.location.search);
-var activeIndex = parseInt(searchParams.get('card'))
+var activeIndex;
+
+initializeIndex();
+addCards();
+updateCards();
+
+
+function initializeIndex() {
+  const searchParams = new URLSearchParams(window.location.search);
+  activeIndex = parseInt(searchParams.get('card'))
+  
+  if (!activeIndex || activeIndex > data.length) {
+    activeIndex = 0;
+    updateUrlParameter();
+  }
+}
 
 function addCards() {
     
@@ -51,9 +65,6 @@ function addCards() {
   })
 
 }
-
-addCards();
-updateCards();
 
 function updateCards() {
   const length = data.length;
