@@ -2,6 +2,7 @@
   margin:0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Sorts Mill Goudy', serif;
 }
 
 body{
@@ -9,17 +10,18 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222;
+  background-color: #98B9CD;
 }
 
 .container {
   display: flex;
+  padding-bottom: 50px;
   align-items: center;
   justify-content: center;
   /* background-color: teal; */
   height: 100vh;
   width: 100%;
-  padding: 2rem;
+  overflow-x: hidden;
 }
 
 .carousel {
@@ -31,7 +33,7 @@ body{
   height: 100%;
   width:100%;
   /* overflow: auto; */
-
+  
   position: relative;
   /* border: 5px solid salmon; */
 }
@@ -39,14 +41,10 @@ body{
 .card-container {
   position: absolute;
   display: flex;
+
 }
 
 .card {
-  background-color: steelblue;
-  width: 350px;
-  height: 490px;
-  aspect-ratio: 2.5/3.5;
-  border: 2px solid goldenrod;
   border-radius: 16px;
   display: flex;
   justify-content: center;
@@ -61,12 +59,15 @@ body{
   transform: scale(110%); */
 }
 
-#prevButton, #nextButton, .downloadbutton
+#prevButton, #nextButton, .navBar
 {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   /* padding:1rem; */
   font-size: 3rem;
   z-index: 400;
-  background-color: rgba(100,100,100,0.5);
+  background-color: #333;
   width:80px;
   height:80px;
   border-radius: 40px;
@@ -96,20 +97,36 @@ body{
   /* justify-self: end; */
 }
 
-.downloadbutton {
+.navBar {
   display: none;
 }
 
-.active .downloadbutton {
+.active .navBar {
   display: flex;
+  flex-direction: row;
+  gap: 15px;
   position: absolute;
   bottom: -10%;
-  font-size: 1rem;
-  width:2rem;
-  height:2rem;
+  right:25%;
+  font-size: large;
+  width:7rem;
+  height: 2rem;
   border-radius: 1rem;
+  text-align: center;
+  padding-top: 5px; 
 }
 
+.fa:hover{
+  color: #fde047;
+}
+
+.shareBtn{
+  margin-top: 4px;
+}
+
+.pinkBg{
+  color: #E3ABAB;
+}
 
 
 
